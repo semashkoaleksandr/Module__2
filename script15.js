@@ -16,12 +16,13 @@ const arr = [
   { name: "test2", age: 18, country: "RF", tel: "+376483876346" },
 ];
 
-const returnObjectByValue = (array, value) => {
+const returnObjectByValue = (array, property, value) => {
   const returnedObject = [];
 
   for (let elem of array) {
     for (let key in elem) {
-      if (elem[key] === value) {
+      // console.log(key);
+      if (elem[key] === value && property === key) {
         returnedObject.push(elem);
       }
     }
@@ -30,4 +31,4 @@ const returnObjectByValue = (array, value) => {
   return returnedObject;
 };
 
-console.log(returnObjectByValue(arr, 23));
+console.log(returnObjectByValue(arr,  'age', 23));
